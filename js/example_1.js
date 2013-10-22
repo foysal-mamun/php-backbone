@@ -7,9 +7,9 @@
  */
 
 var MessageModel = Backbone.Model.extend({
-    urlRoot : 'messages.php',
+    urlRoot : '../api/example_1.php',
     defaults: {
-        message: "Text"
+        message: "Text Message"
     }
 });
 
@@ -25,21 +25,21 @@ var MessageView = Backbone.View.extend({
 
 var MessageRouter = Backbone.Router.extend({
     routes:{
-        "": "show"
+        "": "displayMessage"
     },
-    show:function() {
+    displayMessage: function() {
         var messageModel = new MessageModel();
+
         var messageView = new MessageView({model:messageModel});
         messageModel.fetch({
             success: function () {
                 $('#msg').html(messageView.render().el);
             }
         });
-        //$('#msg').html(messageView.render().el);
     }
 });
 
-var message = new MessageRouter();
-//Backbone.history.start();
+var messageRouter  = new MessageRouter();
+Backbone.history.start();
 
 
