@@ -22,9 +22,9 @@ function getMessages() {
     }
 }
 function getConnection() {
-    $dbhost="localhost"; // Your Host Name, For Me It localhost
-    $dbuser="root";      // User Name, For Me It root
-    $dbpass="root";      // Password, For Me It root
+    $dbhost="tunnel.pagodabox.com"; // Your Host Name, For Me It localhost
+    $dbuser="chante";      // User Name, For Me It root
+    $dbpass="QjmT3KYE";      // Password, For Me It root
     $dbname="test";      // Database Name, For Me It test
     $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
